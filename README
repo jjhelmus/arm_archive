@@ -4,6 +4,7 @@ Requirements
 ------------
 
 Python 2.7 (3.3 might work)
+Suds (https://fedorahosted.org/suds/), tested with version 0.4
 
 
 Install
