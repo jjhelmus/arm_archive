@@ -1,4 +1,5 @@
-arm_archive.py is Python module for accessing the ARM archive in Python
+arm_archive.py is a Python module for accessing data from the  
+`ARM archive <http://www.archive.arm.gov/armlogin/login.jsp>`_.
 
 Requirements
 ------------
@@ -9,7 +10,7 @@ Requirements
 
 Install
 -------
-Copy the file arm_archive.py to the site-packages file, add a .pth file, or
+Copy the file arm_archive.py to the site-packages directory, add a .pth file, or
 add the directory to the PYTHON_PATH.
 
 Use
@@ -23,4 +24,3 @@ The module can also be used from the command line using:
 This can be aliased in bash using:
     
     alias apu='python -m arm_archive'
-
