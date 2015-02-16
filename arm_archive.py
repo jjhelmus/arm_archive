@@ -289,8 +289,9 @@ def list_orders_ready(user):
 # processCommonOrder(userID, filesNamesList)    # ???
 # processRawOrder(userID, filesNamesList)       # Order with version
 
-if __name__ == "__main__":
 
+def main(args=None):
+    """ Main function for use in scripts. """
     import argparse
 
     # argument parser
@@ -372,7 +373,13 @@ if __name__ == "__main__":
         description='List Archive order that are ready for download')
     ready_parser.add_argument('user', help='archive username')
 
-    args = parser.parse_args()
+    try:
+        import argcomplete
+        argcomplete.autocomplete(parser)
+    except ImportError:
+        pass
+
+    args = parser.parse_args(args)
     # List datastreams, datastreams command
     if args.cmd == 'datastreams':
         for ds in list_datastreams(args.regex):
@@ -439,3 +446,7 @@ if __name__ == "__main__":
     else:
         parser.print_usage()
         raise SystemExit("\nerror: invalid command '%s'" % (args.command))
+
+
+if __name__ == "__main__":
+    main()
