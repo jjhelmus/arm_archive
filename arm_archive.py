@@ -49,7 +49,7 @@ def list_datastreams(pattern=None):
     """
     client = _init_client()
     datastreams = client.service.getDataStreams()
-    return _regex_filter(datastreams, pattern)
+    return sorted(_regex_filter(datastreams, pattern))
 
 
 def list_files(datastreams, startdate, enddate=None, pattern=None):
@@ -82,7 +82,7 @@ def list_files(datastreams, startdate, enddate=None, pattern=None):
     files = client.service.getFiles(datastreams, startdate, enddate)
     if len(files) == 1 and files[0] == 'No data files found':
         return []
-    return _regex_filter(files, pattern)
+    return sorted(_regex_filter(files, pattern))
 
 
 def valid_user(user):
