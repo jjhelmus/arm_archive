@@ -6,7 +6,7 @@ Requirements
 
 * Python 2.7, 3.3, 3.4.
 * `Suds <https://pypi.python.org/pypi/suds>`_ with Python 2.7.
-* `Suds-jurko <https://pypi.python.org/pypi/suds-jurko>` with Python 3.3/3.4.
+* `Suds-jurko <https://pypi.python.org/pypi/suds-jurko>`_ with Python 3.3/3.4.
 
 Install
 -------
