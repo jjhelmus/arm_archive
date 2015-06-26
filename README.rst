@@ -1,5 +1,5 @@
 arm_archive.py is a Python module for accessing data from the
-`ARM archive <http://www.archive.arm.gov/armlogin/login.jsp>`_.
+`ARM archive <http://www.archive.arm.gov>`_.
 
 Requirements
 ------------
@@ -10,8 +10,18 @@ Requirements
 
 Install
 -------
-Run `python setup.py install` to install the package globally.
-For a user install use `python setup.py install --user`.
+
+To install using pip use::
+
+    pip install arm_archive
+
+To install from source in your home directory, use::
+    
+    python setup.py install --user
+
+To install for all users on Unix/Linux::
+
+    python setup.py install
 
 Use
 ---
