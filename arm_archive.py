@@ -13,7 +13,7 @@ from ftplib import FTP as _FTP
 
 from suds.client import Client as _Client
 
-__version__ = '0.1.0'
+__version__ = '0.2.0.dev'
 
 _ARM_WS_URL = 'http://www.archive.arm.gov/armws/services/arm?wsdl'
 _ARM_FTP = 'ftp.archive.arm.gov'
