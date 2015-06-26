@@ -1,4 +1,4 @@
-arm_archive.py is a Python module for accessing data from the  
+arm_archive.py is a Python module for accessing data from the
 `ARM archive <http://www.archive.arm.gov/armlogin/login.jsp>`_.
 
 Requirements
@@ -9,8 +9,8 @@ Requirements
 
 Install
 -------
-Copy the file arm_archive.py to the site-packages directory, add a .pth file, or
-add the directory to the PYTHON_PATH.
+Run `python setup.py install` to install the package globally.
+For a user install use `python setup.py install --user`.
 
 Use
 ---
@@ -21,19 +21,19 @@ The module can also be used from the command line using::
     python -m arm_archive
 
 This can be aliased in bash using::
-    
+
     alias apu='python -m arm_archive'
 
 
 Command line examples
 ---------------------
 
-These examples assume that the above alias has been created so that 
+These examples assume that the above alias has been created so that
 'python -m arm_archive' can be executed using 'apu'. Addition help for each
 command can be obtained using 'apu command -h', for example 'apu list -h'.
 
 List available datastreams which match a regular expression::
-    
+
     $ apu datastreams sgpceil
     sgpceilB1.b1
     sgpceilB4.b1
@@ -63,7 +63,7 @@ Ordering data for a specific datastream and time period::
 
 Ordering data by supplying a list of filenames::
 
-    $ apu order username sgpceilC1.b1.20141015.000009.nc 
+    $ apu order username sgpceilC1.b1.20141015.000009.nc
     Success 1 file(s) ordered, order_id: 123456
 
 Check that status of an order::
@@ -72,7 +72,7 @@ Check that status of an order::
     processing
 
 List files in a complete order::
-    
+
     $ apu files username 123456
     AAA.files_not_found
     sgpceilC1.b1.20141005.000000.nc
@@ -86,12 +86,12 @@ Download file from a complete order to the current directory::
     Retrieving: sgpceilC1.b1.20141015.000009.nc
 
 Download a single file from a complete order::
-    
+
     $ apu download username 168977 sgpceilC1.b1.20141005.000000.nc
     Retrieving: sgpceilC1.b1.20141005.000000.nc
 
 Canceling an order::
-    
+
     $ apu cancel username 123456
     True
 
