@@ -5,7 +5,7 @@ from distutils.core import setup
 
 setup(
     name='arm_archive',
-    version='0.1.0.dev',
+    version='0.1.0',
     author='Jonathan J. Helmus',
     author_email='jjhelmus@gmail.com',
     py_modules=['arm_archive'],
