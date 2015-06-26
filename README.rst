@@ -4,8 +4,9 @@ arm_archive.py is a Python module for accessing data from the
 Requirements
 ------------
 
-* Python 2.7 (3.3 might work)
-* `Suds <https://fedorahosted.org/suds/>`_, tested with version 0.4
+* Python 2.7, 3.3, 3.4.
+* `Suds <https://pypi.python.org/pypi/suds>`_ with Python 2.7.
+* `Suds-jurko <https://pypi.python.org/pypi/suds-jurko>` with Python 3.3/3.4.
 
 Install
 -------

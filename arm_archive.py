@@ -4,6 +4,8 @@ Python Function for interacting with the ARM Archive.
 By: Jonathan J. Helmus (jhelmus@anl.gov)
 """
 
+from __future__ import print_function
+
 import re as _re
 from datetime import datetime as _datetime
 from datetime import timedelta as _timedelta
@@ -216,7 +218,7 @@ def order_download(user, order_id, files=None):
     if isinstance(files, str):
         files = [files]
     for filename in files:
-        print "Retrieving:", filename
+        print("Retrieving:", filename)
         ftp.retrbinary('RETR ' + filename, open(filename, 'wb').write)
     ftp.quit()
     return
@@ -384,7 +386,7 @@ def main(args=None):
     # List datastreams, datastreams command
     if args.cmd == 'datastreams':
         for ds in list_datastreams(args.regex):
-            print ds
+            print(ds)
 
     # Order files from Archive, order command
     elif args.cmd == 'order':
@@ -402,24 +404,24 @@ def main(args=None):
 
         status, flag = order_files(args.user, files)
         if status:
-            print "Success %s file(s) ordered, order_id: %s" % (flag[2],
-                                                                flag[1])
+            print("Success %s file(s) ordered, order_id: %s" % (flag[2],
+                                                                flag[1]))
         else:
-            print "Order failed, response from server:\n", flag
+            print("Order failed, response from server:\n", flag)
 
     # List files in Archive, list command
     elif args.cmd == 'list':
         fs = list_files(args.datastream, args.start, args.end, args.regex)
         for f in fs:
-            print f
+            print(f)
 
     # Cancel Archive Order, cancel command
     elif args.cmd == 'cancel':
-        print order_clear(args.user, args.order_id)
+        print(order_clear(args.user, args.order_id))
 
     # Order status, status command
     elif args.cmd == 'status':
-        print order_status(args.order_id)
+        print(order_status(args.order_id))
 
     # Download files from archive, download command
     elif args.cmd == 'download':
@@ -437,12 +439,12 @@ def main(args=None):
     # List files in order, files command
     elif args.cmd == 'files':
         for f in list_order_files(args.user, args.order_id):
-            print f
+            print(f)
 
     # List Orders which are ready for download, ready command
     elif args.cmd == 'ready':
         for order in list_orders_ready(args.user):
-            print order
+            print(order)
 
     else:
         parser.print_usage()
