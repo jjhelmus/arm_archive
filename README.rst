@@ -16,11 +16,11 @@ Use
 ---
 The functions in the module can be used in Python after importing the module.
 
-The module can also be used from the command line using:
+The module can also be used from the command line using::
 
     python -m arm_archive
 
-This can be aliased in bash using:
+This can be aliased in bash using::
     
     alias apu='python -m arm_archive'
 
@@ -32,7 +32,7 @@ These examples assume that the above alias has been created so that
 'python -m arm_archive' can be executed using 'apu'. Addition help for each
 command can be obtained using 'apu command -h', for example 'apu list -h'.
 
-List available datastreams which match a regular expression:
+List available datastreams which match a regular expression::
     
     $ apu datastreams sgpceil
     sgpceilB1.b1
@@ -42,7 +42,7 @@ List available datastreams which match a regular expression:
     sgpceilC1.b1
     sgpceilpblhtC1.a0
 
-List available files for a specific time period:
+List available files for a specific time period::
 
     $ apu list sgpceilC1.b1 20141001 20141005
     sgpceilC1.b1.20141001.000010.nc
@@ -51,51 +51,51 @@ List available files for a specific time period:
     sgpceilC1.b1.20141004.000002.nc
     sgpceilC1.b1.20141005.000000.nc
 
-Leaving off the end date will find file for only a single day:
+Leaving off the end date will find file for only a single day::
 
     $ apu list sgpceilC1.b1 20141015
     sgpceilC1.b1.20141015.000009.nc
 
-Ordering data for a specific datastream and time period:
+Ordering data for a specific datastream and time period::
 
     $ apu order -d sgpceilC1.b1 20141001 20141005 username
     Success 5 file(s) ordered, order_id: 123456
 
-Ordering data by supplying a list of filenames:
+Ordering data by supplying a list of filenames::
 
     $ apu order username sgpceilC1.b1.20141015.000009.nc 
     Success 1 file(s) ordered, order_id: 123456
 
-Check that status of an order:
+Check that status of an order::
 
     $ apu status 123456
     processing
 
-List files in a complete order:
+List files in a complete order::
     
     $ apu files username 123456
     AAA.files_not_found
     sgpceilC1.b1.20141005.000000.nc
     sgpceilC1.b1.20141015.000009.nc
 
-Download file from a complete order to the current directory:
+Download file from a complete order to the current directory::
 
     $ apu download username 168977
     Retrieving: AAA.files_not_found
     Retrieving: sgpceilC1.b1.20141005.000000.nc
     Retrieving: sgpceilC1.b1.20141015.000009.nc
 
-Download a single file from a complete order:
+Download a single file from a complete order::
     
     $ apu download username 168977 sgpceilC1.b1.20141005.000000.nc
     Retrieving: sgpceilC1.b1.20141005.000000.nc
 
-Canceling an order:
+Canceling an order::
     
     $ apu cancel username 123456
     True
 
-List all orders with some files ready to download for a given user:
+List all orders with some files ready to download for a given user::
 
     $ apu ready username
     123456
