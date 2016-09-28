@@ -137,6 +137,8 @@ def order_files(user, filenames):
     pattern = _re.compile(r'user:\s*([a-z]+), '
                           r'order session ID:\s*([0-9]+) '
                           r'number of files ordered:\s*([0-9]+)')
+    if response is None:
+        return False, response
     match = pattern.search(response)
     if match:
         return True, match.groups()
